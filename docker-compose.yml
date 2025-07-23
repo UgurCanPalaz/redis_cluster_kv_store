@@ -1,0 +1,58 @@
+version: "3.8"
+services:
+  redis-node1:
+    image: redis:7.0
+    command:
+      - redis-server
+      - --port
+      - "7000"
+      - --cluster-enabled
+      - "yes"
+      - --cluster-config-file
+      - nodes.conf
+      - --cluster-node-timeout
+      - "5000"
+      - --appendonly
+      - "yes"
+    ports:
+      - "7000:7000"
+    volumes:
+      - ./data/node1:/data
+
+  redis-node2:
+    image: redis:7.0
+    command:
+      - redis-server
+      - --port
+      - "7001"
+      - --cluster-enabled
+      - "yes"
+      - --cluster-config-file
+      - nodes.conf
+      - --cluster-node-timeout
+      - "5000"
+      - --appendonly
+      - "yes"
+    ports:
+      - "7001:7001"
+    volumes:
+      - ./data/node2:/data
+
+  redis-node3:
+    image: redis:7.0
+    command:
+      - redis-server
+      - --port
+      - "7002"
+      - --cluster-enabled
+      - "yes"
+      - --cluster-config-file
+      - nodes.conf
+      - --cluster-node-timeout
+      - "5000"
+      - --appendonly
+      - "yes"
+    ports:
+      - "7002:7002"
+    volumes:
+      - ./data/node3:/data

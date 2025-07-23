@@ -1,0 +1,4 @@
+com\example\kvstore\LoadTest.class
+com\example\kvstore\App.class
+com\example\kvstore\KeyValueStore.class
+com\example\kvstore\TestStore.class
